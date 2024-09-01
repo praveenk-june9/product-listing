@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/product-listing/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Simple product listing page built in vanila javascript by Praveen"
+    />
+    <title>Product Listing | Vite App</title>
+    <script type="module" crossorigin src="/product-listing/assets/index-B0uqBAeX.js"></script>
+    <link rel="stylesheet" crossorigin href="/product-listing/assets/index-DV9G7OJg.css">
+    <script type="module">import.meta.url;import("_").catch(()=>1);(async function*(){})().next();if(location.protocol!="file:"){window.__vite_is_modern_browser=true}</script>
+    <script type="module">!function(){if(window.__vite_is_modern_browser)return;console.warn("vite: loading legacy chunks, syntax error above and the same error below should be ignored");var e=document.getElementById("vite-legacy-polyfill"),n=document.createElement("script");n.src=e.src,n.onload=function(){System.import(document.getElementById('vite-legacy-entry').getAttribute('data-src'))},document.body.appendChild(n)}();</script>
+  </head>
+  <body>
+    <header class="header">
+      <h1 class="header__title">VENIA</h1>
+      <label for="search-bar" class="visually-hidden">Search Products</label>
+      <input
+        type="text"
+        id="search-bar"
+        class="header__search-bar"
+        aria-label="Search products"
+        placeholder="Search products..."
+      />
+    </header>
+
+    <div>
+      <section class="hero-banner" aria-label="hero banner">
+        <div class="hero-banner__image__box">
+          <img
+            src="https://images.pexels.com/photos/1884581/pexels-photo-1884581.jpeg?auto=compress&cs=tinysrgb&w=800"
+            alt="hero image"
+            loading="lazy"
+            width="500"
+            height="250"
+            class="hero-banner__image"
+          />
+        </div>
+        <div class="hero-banner__content">
+          <div class="hero-banner__title" id="hero-content" aria-live="polite">
+            All
+          </div>
+        </div>
+      </section>
+
+      <main class="main-content">
+        <section class="filter-panel" aria-label="filters and sorting">
+          <h2 id="filter-heading" class="visually-hidden">Filters</h2>
+
+          <div class="filter-panel__group">
+            <button
+              class="filter-panel__button filter-panel__button--bordered"
+              id="toggle-filters"
+            >
+              Show Filters
+            </button>
+            <div class="filter-panel__sort">
+              <select
+                class="filter-panel__select"
+                id="sort-filter"
+                aria-label="Sort filter dropdown"
+              >
+                <option class="filter-panel__option" value="default">
+                  Sort Products
+                </option>
+                <option class="filter-panel__option" value="low-to-high">
+                  Price: Low to High
+                </option>
+                <option class="filter-panel__option" value="high-to-low">
+                  Price: High to Low
+                </option>
+              </select>
+            </div>
+          </div>
+
+          <div class="filter-panel__controls" id="filters">
+            <!-- Category filters -->
+            <div>
+              <label class="filter-panel__label" for="category-filter"
+                >Category:</label
+              >
+              <select
+                class="filter-panel__select"
+                id="category-filter"
+                aria-label="Category filter dropdown"
+              >
+                <option class="filter-panel__option" value="all">All</option>
+                <!-- Categories will be dynamically loaded -->
+              </select>
+            </div>
+            <!-- Price range filters -->
+            <div>
+              <label class="filter-panel__label" for="price-filter"
+                >Price Range:</label
+              >
+              <select
+                class="filter-panel__select"
+                id="price-filter"
+                aria-label="Price filter dropdown"
+              >
+                <option class="filter-panel__option" value="all">All</option>
+                <option class="filter-panel__option" value="0-50">
+                  Under $50
+                </option>
+                <option class="filter-panel__option" value="50-100">
+                  $50 - $100
+                </option>
+                <option class="filter-panel__option" value="100-200">
+                  $100 - $200
+                </option>
+                <option class="filter-panel__option" value="200+">
+                  Above $200
+                </option>
+              </select>
+            </div>
+            <!-- Ratings range filters -->
+            <div>
+              <label class="filter-panel__label" for="rating-filter"
+                >Item Rating:</label
+              >
+              <select
+                class="filter-panel__select"
+                id="rating-filter"
+                aria-label="Rating filter dropdown"
+              >
+                <option class="filter-panel__option" value="all">All</option>
+                <option class="filter-panel__option" value="awesome">
+                  4 and above
+                </option>
+                <option class="filter-panel__option" value="good">3 - 4</option>
+                <option class="filter-panel__option" value="bad">2 - 3</option>
+                <option class="filter-panel__option" value="terrible">
+                  below 2
+                </option>
+              </select>
+            </div>
+          </div>
+        </section>
+
+        <section
+          id="result-count"
+          class="result-count"
+          aria-live="polite"
+        ></section>
+
+        <section id="product-list" class="product" aria-live="polite">
+          <!-- Products will be dynamically loaded here -->
+        </section>
+
+        <section id="product-list-skeleton" aria-live="polite"></section>
+
+        <button
+          id="load-more"
+          class="load-more-button"
+          aria-label="Load more products"
+        >
+          Load More Products
+        </button>
+      </main>
+    </div>
+
+    <footer class="footer">
+      <div class="footer__links">
+        <a class="footer__link" href="#">Terms of Use</a
+        ><a class="footer__link" href="#">Privacy Policy</a>
+      </div>
+      <div class="footer__contact">
+        <p class="footer__company-name">@Company name</p>
+        <p class="footer__address">Address ave, City Name, State, Zip</p>
+      </div>
+      <div class="footer__brand">VENIA</div>
+    </footer>
+
+    <script nomodule>!function(){var e=document,t=e.createElement("script");if(!("noModule"in t)&&"onbeforeload"in t){var n=!1;e.addEventListener("beforeload",(function(e){if(e.target===t)n=!0;else if(!e.target.hasAttribute("nomodule")||!n)return;e.preventDefault()}),!0),t.type="module",t.src=".",e.head.appendChild(t),t.remove()}}();</script>
+    <script nomodule crossorigin id="vite-legacy-polyfill" src="/product-listing/assets/polyfills-legacy-Cqak2mg5.js"></script>
+    <script nomodule crossorigin id="vite-legacy-entry" data-src="/product-listing/assets/index-legacy-ka60zXBr.js">System.import(document.getElementById('vite-legacy-entry').getAttribute('data-src'))</script>
+  </body>
+</html>
